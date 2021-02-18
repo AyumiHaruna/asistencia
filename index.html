@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylesheet"> 
+    <!-- awesome icons  -->
+    <script src="https://kit.fontawesome.com/035f9caf7c.js" crossorigin="anonymous"></script>
+
+    <!-- page styles -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <div class="d-flex toggled" id="wrapper">
+        <!-- Sidebar -->
+        <div class="bg-light border-right" id="sidebar-wrapper">
+            <div class="sidebar-heading">Menú</div>
+            <div class="list-group list-group-flush">
+                <button type="button" class="navBtn" data-target="primer-estatutaria" data-key="collapse" onclick="toggleCollapse(this)">PRIMER ESTATUTARÍA</button>
+                <div class=" collapsible collapse" id="primer-estatutaria">
+                    <button type="button" class="navBtn2" data-evt="1" data-type="A" onclick="selectUserData(this)">Asistentes</button>
+                    <button type="button" class="navBtn2" data-evt="1" data-type="B" onclick="selectUserData(this)">Profesores</button>
+                </div> 
+                <button type="button" class="navBtn" data-target="segunda-estatutaria" data-key="collapse" onclick="toggleCollapse(this)">SEGUNDA ESTATUTARÍA</button>
+                <div class=" collapsible collapse" id="segunda-estatutaria">
+                    <button type="button" class="navBtn2" data-evt="2" data-type="A" onclick="selectUserData(this)">Asistentes</button>
+                    <button type="button" class="navBtn2" data-evt="2" data-type="B" onclick="selectUserData(this)">Profesores</button>
+                </div> 
+                <button type="button" class="navBtn" data-target="tercer-estatutaria" data-key="collapse" onclick="toggleCollapse(this)">TERCER ESTATUTARÍA</button>
+                <div class=" collapsible collapse" id="tercer-estatutaria">
+                    <button type="button" class="navBtn2" data-evt="3" data-type="A" onclick="selectUserData(this)">Asistentes</button>
+                    <button type="button" class="navBtn2" data-evt="3" data-type="B" onclick="selectUserData(this)">Profesores</button>
+                </div> 
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- toggler -->
+                    <div class="col-12">
+                        <button id="navToggler" data-target="wrapper" data-key="toggled" onClick="toggleCollapse(this)"></button>
+                    </div>
+                    
+                    <div class="col-10 offset-1 form_wrapper" >
+                        <!-- header -->
+                        <div class="row">                            
+                            <div class="col-9 head">
+                                <div class="title">Primer Estatutaría</div>
+                                <div class="userType">Asistentes</div>
+                                <div class="subTitle">Lista de Asistencia</div>
+                            </div>
+                            <div class="col-3 logo_wrapper">
+                                <img src="img/cardiologia-logo.png" alt="Logo de Sociedad Mexicana de Cardiología"/>
+                            </div>
+                        </div>
+
+                        <!-- table  -->
+                        <div class="row">
+                            <div class="col-6 offset-6">
+                                <div class="input-group">
+                                    <input type="text" class="form-control search-input" placeholder="Buscar por nombre" aria-label="Buscar por nombre" aria-describedby="basic-addon2">
+                                    <span class="input-group-text" id="basic-addon2">
+                                        <div class="addon-wrapper">
+                                            <i class="fas fa-search"></i>
+                                        </div>                                        
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                testing
+                            </div>
+                        </div>
+                    </div>   
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+<script src="index.js"></script>
+</html>
