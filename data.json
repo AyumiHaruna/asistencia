@@ -1,0 +1,85 @@
+{
+    "primera" : {
+        "asistentes" : {
+            "1" : {
+                "nombre" : "Gemma Walls",
+                "archivo" : "www.google.com"
+            },
+            "2" : {
+                "nombre" : "Patrik Olsen",
+                "archivo" : "www.google.com"
+            },
+            "3" : {
+                "nombre" : "Shakeel Gardner",
+                "archivo" : "www.google.com"
+            },
+            "4" : {
+                "nombre" : "Kenan Burke",
+                "archivo" : "www.google.com"
+            },
+            "5" : {
+                "nombre" : "Millicent Greenaway",
+                "archivo" : "www.google.com"
+            },
+            "6" : {
+                "nombre" : "Aiza Harrison",
+                "archivo" : "www.google.com"
+            },
+            "7" : {
+                "nombre" : "Mcauley Bridges",
+                "archivo" : "www.google.com"
+            },
+            "8" : {
+                "nombre" : "Mack Mccarthy",
+                "archivo" : "www.google.com"
+            },
+            "9" : {
+                "nombre" : "Isabell Moran",
+                "archivo" : "www.google.com"
+            },
+            "10" : {
+                "nombre" : "Karl Macdonald",
+                "archivo" : "www.google.com"
+            }
+        },
+        "profesores" : {
+            "1" : {
+                "nombre" : "Khadijah Mcbride",
+                "archivo" : "www.google.com"
+            },
+            "2" : {
+                "nombre" : "Katie Flower",
+                "archivo" : "www.google.com"
+            },
+            "3" : {
+                "nombre" : "Manal Cano",
+                "archivo" : "www.google.com"
+            },
+            "4" : {
+                "nombre" : "Lacey-Mai Sparrow",
+                "archivo" : "www.google.com"
+            },
+            "5" : {
+                "nombre" : "Avaya Haigh",
+                "archivo" : "www.google.com"
+            }
+        }
+    },
+    "segunda" : {
+        "asistentes" : {
+            "1" : {
+                "nombre" : "Gemma Walls",
+                "archivo" : "www.google.com"
+            },
+            "2" : {
+                "nombre" : "Patrik Olsen",
+                "archivo" : "www.google.com"
+            },
+            "3" : {
+                "nombre" : "Shakeel Gardner",
+                "archivo" : "www.google.com"
+            }
+        }
+    }
+}
+    

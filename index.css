@@ -105,6 +105,7 @@ body {
     border-radius: 10px;
     position: absolute;
     top: 8vh;
+    margin-bottom: 5vh;
 }
 .logo_wrapper{
     padding: 2vw 4vw;
@@ -134,7 +135,6 @@ body {
     text-align: center;
     color: #a6a6a6;
     font-size: 2.5em;
-    
     letter-spacing: 2px;
 }
 
@@ -161,4 +161,54 @@ body {
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
     padding: 0.3em;
+}
+
+
+
+/* table style */
+.tableWrapper{
+    padding: 1em 5em 2em 5em;
+}
+.list-table{
+    border: solid 1px #fff;
+    border-radius: 5px;
+}
+
+.list-table thead{
+    background-color: #80002a;
+    color: #f2f2f2;
+}
+.list-table thead th{
+    font-size: 1em;
+    font-weight:600;
+    letter-spacing: 1.3px;
+}
+.dataTable-sorter::before {
+    border-top: 4px solid #fff;   
+}
+.dataTable-sorter::after {
+    border-bottom: 4px solid #fff;
+}
+.dataTable-top{
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.list-table tbody tr:nth-child(even){
+    background: #ffe6ee;
+}
+.list-table tbody tr:nth-child(odd){
+    background: #fff;
+}
+
+.list-table .file-container{
+    font-size: 2em;
+    padding-left: 5vw;
+}
+.list-table .file-container a{
+    color: #803336;
+}
+.list-table .name-container{
+    padding-top: 1.3em;
 }

@@ -12,6 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylesheet"> 
     <!-- awesome icons  -->
     <script src="https://kit.fontawesome.com/035f9caf7c.js" crossorigin="anonymous"></script>
+    <!-- data tables -->
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" type="text/javascript"></script>
 
     <!-- page styles -->
     <link rel="stylesheet" href="index.css">
@@ -23,20 +26,20 @@
         <div class="bg-light border-right" id="sidebar-wrapper">
             <div class="sidebar-heading">Menú</div>
             <div class="list-group list-group-flush">
-                <button type="button" class="navBtn" data-target="primer-estatutaria" data-key="collapse" onclick="toggleCollapse(this)">PRIMER ESTATUTARÍA</button>
-                <div class=" collapsible collapse" id="primer-estatutaria">
-                    <button type="button" class="navBtn2" data-evt="1" data-type="A" onclick="selectUserData(this)">Asistentes</button>
-                    <button type="button" class="navBtn2" data-evt="1" data-type="B" onclick="selectUserData(this)">Profesores</button>
+                <button type="button" class="navBtn" data-target="primera-estatutaria" data-key="collapse" onclick="toggleCollapse(this)">Primera Estatutaría</button>
+                <div class="collapsible collapse" id="primera-estatutaria" data-name="Primera Estatutaría">
+                    <button type="button" class="navBtn2" data-evt="primera" data-type="asistentes" onclick="selectUserData(this), toggleCollapse(this)">Asistentes</button>
+                    <button type="button" class="navBtn2" data-evt="primera" data-type="profesores" onclick="selectUserData(this), toggleCollapse(this)">Profesores</button>
                 </div> 
-                <button type="button" class="navBtn" data-target="segunda-estatutaria" data-key="collapse" onclick="toggleCollapse(this)">SEGUNDA ESTATUTARÍA</button>
-                <div class=" collapsible collapse" id="segunda-estatutaria">
-                    <button type="button" class="navBtn2" data-evt="2" data-type="A" onclick="selectUserData(this)">Asistentes</button>
-                    <button type="button" class="navBtn2" data-evt="2" data-type="B" onclick="selectUserData(this)">Profesores</button>
+                <button type="button" class="navBtn" data-target="segunda-estatutaria" data-key="collapse" onclick="toggleCollapse(this)">Segunda Estatutaría</button>
+                <div class="collapsible collapse" id="segunda-estatutaria" data-name="Segunda Estatutaría">
+                    <button type="button" class="navBtn2" data-evt="segunda" data-type="asistentes" onclick="selectUserData(this), toggleCollapse(this)">Asistentes</button>
+                    <button type="button" class="navBtn2" data-evt="segunda" data-type="profesores" onclick="selectUserData(this), toggleCollapse(this)">Profesores</button>
                 </div> 
-                <button type="button" class="navBtn" data-target="tercer-estatutaria" data-key="collapse" onclick="toggleCollapse(this)">TERCER ESTATUTARÍA</button>
-                <div class=" collapsible collapse" id="tercer-estatutaria">
-                    <button type="button" class="navBtn2" data-evt="3" data-type="A" onclick="selectUserData(this)">Asistentes</button>
-                    <button type="button" class="navBtn2" data-evt="3" data-type="B" onclick="selectUserData(this)">Profesores</button>
+                <button type="button" class="navBtn" data-target="tercera-estatutaria" data-key="collapse" onclick="toggleCollapse(this)">Tercera Estatutaría</button>
+                <div class="collapsible collapse" id="tercera-estatutaria" data-name="Tercera Estatutaría">
+                    <button type="button" class="navBtn2" data-evt="tercera" data-type="asistentes" onclick="selectUserData(this), toggleCollapse(this)">Asistentes</button>
+                    <button type="button" class="navBtn2" data-evt="tercera" data-type="profesores" onclick="selectUserData(this), toggleCollapse(this)">Profesores</button>
                 </div> 
             </div>
         </div>
@@ -47,15 +50,15 @@
                 <div class="row">
                     <!-- toggler -->
                     <div class="col-12">
-                        <button id="navToggler" data-target="wrapper" data-key="toggled" onClick="toggleCollapse(this)"></button>
+                        <button id="navToggler" class="navToggler" data-target="wrapper" data-key="toggled" onClick="toggleCollapse(this)"></button>
                     </div>
                     
                     <div class="col-10 offset-1 form_wrapper" >
                         <!-- header -->
                         <div class="row">                            
                             <div class="col-9 head">
-                                <div class="title">Primer Estatutaría</div>
-                                <div class="userType">Asistentes</div>
+                                <div class="title" id="mainTitle">Primera Estatutaría</div>
+                                <div class="userType" id="mainUserType">Asistentes</div>
                                 <div class="subTitle">Lista de Asistencia</div>
                             </div>
                             <div class="col-3 logo_wrapper">
@@ -67,7 +70,7 @@
                         <div class="row">
                             <div class="col-6 offset-6">
                                 <div class="input-group">
-                                    <input type="text" class="form-control search-input" placeholder="Buscar por nombre" aria-label="Buscar por nombre" aria-describedby="basic-addon2">
+                                    <input type="text" id="input-search" class="form-control search-input" placeholder="Buscar por nombre" aria-label="Buscar por nombre..." aria-describedby="basic-addon2">
                                     <span class="input-group-text" id="basic-addon2">
                                         <div class="addon-wrapper">
                                             <i class="fas fa-search"></i>
@@ -75,8 +78,9 @@
                                     </span>
                                 </div>
                             </div>
-                            <div class="col-12">
-                                testing
+                            <div class="col-12 tableWrapper">
+                                <div class="loading">LOADING ...</div>
+                                <table class="list-table" id="list-table"></table>
                             </div>
                         </div>
                     </div>   
