@@ -25,6 +25,10 @@
         <!-- Sidebar -->
         <div class="bg-light border-right" id="sidebar-wrapper">
             <div class="sidebar-heading">Menú</div>
+            <!-- toggler -->
+            <div class="col-12">
+                <button id="navToggler" class="navToggler" data-target="wrapper" data-key="toggled" onClick="toggleCollapse(this)"></button>
+            </div>
             <div class="list-group list-group-flush">
                 <button type="button" class="navBtn" data-target="primera-estatutaria" data-key="collapse" onclick="toggleCollapse(this)">Primera Estatutaría</button>
                 <div class="collapsible collapse" id="primera-estatutaria" data-name="Primera Estatutaría">
@@ -47,16 +51,14 @@
 
         <div id="page-content-wrapper">
             <div class="container-fluid">
-                <div class="row">
-                    <!-- toggler -->
-                    <div class="col-12">
-                        <button id="navToggler" class="navToggler" data-target="wrapper" data-key="toggled" onClick="toggleCollapse(this)"></button>
-                    </div>
-                    
+                <div class="row">                    
                     <div class="col-10 offset-1 form_wrapper" >
                         <!-- header -->
-                        <div class="row">                            
-                            <div class="col-9 head">
+                        <div class="row">    
+                            <div class="col-12 logo_wrapper_mobile">
+                                <img src="img/cardiologia-logo.png" alt="Logo de Sociedad Mexicana de Cardiología"/>
+                            </div>                        
+                            <div class="col-md-9 col-12 head">
                                 <div class="title" id="mainTitle">Primera Estatutaría</div>
                                 <div class="userType" id="mainUserType">Asistentes</div>
                                 <div class="subTitle">Lista de Asistencia</div>
@@ -68,22 +70,24 @@
 
                         <!-- table  -->
                         <div class="row">
-                            <div class="col-6 offset-6">
-                                <div class="input-group">
+                            <div class="col-md-6 offset-md-6">
+                                <div class="input-group search-group">
                                     <input type="text" id="input-search" class="form-control search-input" placeholder="Buscar por nombre" aria-label="Buscar por nombre..." aria-describedby="basic-addon2">
                                     <span class="input-group-text" id="basic-addon2">
-                                        <div class="addon-wrapper">
+                                        <button class="addon-wrapper">
                                             <i class="fas fa-search"></i>
-                                        </div>                                        
+                                        </button>                                        
                                     </span>
                                 </div>
                             </div>
                             <div class="col-12 tableWrapper">
-                                <div class="loading">LOADING ...</div>
+                                <!-- <div class="loading">LOADING ...</div> -->
                                 <table class="list-table" id="list-table"></table>
                             </div>
                         </div>
                     </div>   
+
+                    <div class="col-12 footer"></div>
                 </div>
             </div>
         </div>

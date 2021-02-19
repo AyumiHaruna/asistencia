@@ -91,7 +91,7 @@ function selectUserData(elm){
                                     ${mainData[key1][key2][key3]["nombre"]}
                                 </td>
                                 <td class="file-container">
-                                    <a href="${mainData[key1][key2][key3]["archivo"]}"> <i class="fas fa-file-download"></i> </a>
+                                    <a href="${mainData[key1][key2][key3]["archivo"]}" target="_blank"> <i class="fas fa-file-download"></i> </a>
                                 </td>
                             </tr>
                         `;
@@ -147,7 +147,16 @@ function createTable(){
 // update search 
 function updateSearch( search ){
     let dataTableInput = document.getElementsByClassName("dataTable-input")[0];
-    dataTableInput.value = search;
+    dataTableInput.value = search
+
+
+    var keyboardEvent = document.createEvent('KeyboardEvent');
+    var initMethod = typeof keyboardEvent.initKeyboardEvent !== 'undefined' ? 'initKeyboardEvent' : 'initKeyEvent';
+
+    
+    let clickEvent = new Event('keyup');
+    dataTableInput.dispatchEvent(clickEvent);
+
 }
 
     
