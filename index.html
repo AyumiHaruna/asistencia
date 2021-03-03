@@ -24,27 +24,18 @@
     <div class="d-flex toggled" id="wrapper">
         <!-- Sidebar -->
         <div class="bg-light border-right" id="sidebar-wrapper">
-            <div class="sidebar-heading">Menú</div>
+            <div class="sidebar-heading">
+                Menú
+                <button type="button" class="menu_close" data-target="wrapper" data-key="toggled" onClick="toggleCollapse(this)"><i class="fas fa-times"></i></button>
+            </div>
             <!-- toggler -->
             <div class="col-12">
                 <button id="navToggler" class="navToggler" data-target="wrapper" data-key="toggled" onClick="toggleCollapse(this)"></button>
             </div>
             <div class="list-group list-group-flush">
-                <button type="button" class="navBtn" data-target="primera-estatutaria" data-key="collapse" onclick="toggleCollapse(this)">Primera Estatutaría</button>
-                <div class="collapsible collapse" id="primera-estatutaria" data-name="Primera Estatutaría">
-                    <button type="button" class="navBtn2" data-evt="primera" data-type="asistentes" onclick="selectUserData(this), toggleCollapse(this)">Asistentes</button>
-                    <button type="button" class="navBtn2" data-evt="primera" data-type="profesores" onclick="selectUserData(this), toggleCollapse(this)">Profesores</button>
-                </div> 
-                <button type="button" class="navBtn" data-target="segunda-estatutaria" data-key="collapse" onclick="toggleCollapse(this)">Segunda Estatutaría</button>
-                <div class="collapsible collapse" id="segunda-estatutaria" data-name="Segunda Estatutaría">
-                    <button type="button" class="navBtn2" data-evt="segunda" data-type="asistentes" onclick="selectUserData(this), toggleCollapse(this)">Asistentes</button>
-                    <button type="button" class="navBtn2" data-evt="segunda" data-type="profesores" onclick="selectUserData(this), toggleCollapse(this)">Profesores</button>
-                </div> 
-                <button type="button" class="navBtn" data-target="tercera-estatutaria" data-key="collapse" onclick="toggleCollapse(this)">Tercera Estatutaría</button>
-                <div class="collapsible collapse" id="tercera-estatutaria" data-name="Tercera Estatutaría">
-                    <button type="button" class="navBtn2" data-evt="tercera" data-type="asistentes" onclick="selectUserData(this), toggleCollapse(this)">Asistentes</button>
-                    <button type="button" class="navBtn2" data-evt="tercera" data-type="profesores" onclick="selectUserData(this), toggleCollapse(this)">Profesores</button>
-                </div> 
+                <button type="button" class="navBtn" data-target="primera-estatutaria" data-evt="primera" data-name="Primera Estatutaría" data-key="collapse" onclick="toggleCollapse(this)">Primera Estatutaría</button>
+                <button type="button" class="navBtn" data-target="segunda-estatutaria" data-evt="segunda" data-name="Segunda Estatutaría" data-key="collapse" onclick="toggleCollapse(this)">Segunda Estatutaría</button> 
+                <button type="button" class="navBtn" data-target="tercera-estatutaria"  data-evt="tercera" data-name="Tercera Estatutaría" data-key="collapse" onclick="toggleCollapse(this)">Tercera Estatutaría</button>
             </div>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -59,9 +50,15 @@
                                 <img src="img/cardiologia-logo.png" alt="Logo de Sociedad Mexicana de Cardiología"/>
                             </div>                        
                             <div class="col-md-9 col-12 head">
-                                <div class="title" id="mainTitle">Primera Estatutaría</div>
-                                <div class="userType" id="mainUserType">Asistentes</div>
-                                <div class="subTitle">Lista de Asistencia</div>
+                                <div class="row">
+                                    <div class="title col-12" id="mainTitle">Primera Estatutaría</div>
+                                    <div class="userType col-md-6" data-type="asistentes" id="mainUserType" onclick="toggleCollapse(this)">Asistentes</div>
+                                    <div class="userType col-md-6" data-type="profesores" id="mainUserType" onclick="toggleCollapse(this)">Profesores</div>
+                                    <div class="subTitle col-12">Lista de Asistencia</div>
+                                </div>
+                                
+                                
+                                
                             </div>
                             <div class="col-3 logo_wrapper">
                                 <img src="img/cardiologia-logo.png" alt="Logo de Sociedad Mexicana de Cardiología"/>
@@ -70,6 +67,16 @@
 
                         <!-- table  -->
                         <div class="row">
+
+                            <div class="col-md-8 mx-auto">
+                                <p>1. En caso de que hayas hecho tu registro con las siguientes condiciones:
+                                    <br>LIC.ENFERMERÍA.NOMBRE y/o dos nombres: MA.NOMBRE, <br>
+                                    te pedimos hacer la búsqueda con tus apellidos.
+                                    <br>
+                                    <br>2. Tu privacidad es muy importante para nosotros, en caso de requerir la eliminación de tus datos personales, manda un correo a contactosmcardiologia@gmail.com</p>
+                                </p>
+                            </div>
+
                             <div class="col-md-6 offset-md-6">
                                 <div class="input-group search-group">
                                     <input type="text" id="input-search" class="form-control search-input" placeholder="Buscar por nombre" aria-label="Buscar por nombre..." aria-describedby="basic-addon2">
@@ -97,4 +104,5 @@
 </body>
 
 <script src="index.js"></script>
+<script src="data.js"></script>
 </html>

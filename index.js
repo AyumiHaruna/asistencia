@@ -1,22 +1,15 @@
-var mainData;   //storage main data for table
-document.addEventListener('DOMContentLoaded', function () {
-    //get json data
-    async function getData() {
-        await fetch('data.json')
-            .then(response => response.json())
-            .then(data => mainData = data)
-            .catch(err => console.log(err))
+// gobal vars
+var currentEvent;   //store current event selection
+var currentType;    //store current user type selection
 
-        if(mainData != undefined){  
-            // click on first event first button    
-            document.getElementsByClassName("navBtn")[0].click();
-            document.getElementsByClassName("navBtn2")[0].click();
-        }
-    }
-    getData();
+document.addEventListener('DOMContentLoaded', function () {
+
+    // click on event first button    
+    document.getElementsByClassName("navBtn")[0].click();
+    document.getElementsByClassName("userType")[0].click();    
     
-    //insert listener into search bar
-    var inputSearch = document.getElementById("input-search");
+    //insert listener into search bar to emulate dataTables search
+    const inputSearch = document.getElementById("input-search");
     inputSearch.addEventListener("input", () => {
         updateSearch( inputSearch.value );
     })
@@ -41,23 +34,33 @@ function toggleCollapse( elm ){
             if(btnTarget != undefined){ btnTarget.classList.add( btn.dataset.key );  }            
         }
     });
+
+    // if click on event menu button
+    if(elm.classList.contains("navBtn")){
+        currentEvent = elm.dataset.evt;
+        let mainTitle = document.getElementById("mainTitle");
+        mainTitle.innerHTML = elm.dataset.name
+        document.getElementById("wrapper").classList.add("toggled");
+        selectUserData();
+    }
+
+    // if click on event menu button
+    if(elm.classList.contains("userType")){
+        currentType = elm.dataset.type;
+        selectUserData();
+    }
 }
 
 // change filter parameters
-function selectUserData(elm){
+function selectUserData(){
 
     if( dataTable != undefined ){    //if another table instance exists, destroy
         dataTable.destroy();
     }
-    // change main titles
-    let mainTitle = document.getElementById("mainTitle");
-    let mainUserType = document.getElementById("mainUserType");
-    mainTitle.innerHTML = elm.parentElement.dataset.name;
-    mainUserType.innerHTML = elm.innerHTML;
 
     // print selected table
-    let evt = elm.dataset.evt;
-    let type = elm.dataset.type;
+    let evt = currentEvent;
+    let type = currentType;
 
     let targetTable = document.getElementById("list-table");    //get table
     let tablePrint =  `
